@@ -1,0 +1,50 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  string_literal.cpp
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  04/27/12 09:35:27
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  YOUR NAME (), 
+ *        Company:  
+ *
+ * =====================================================================================
+ */
+#include    <iostream>
+using namespace std;
+
+int main(void)
+{
+    char str1[] = "abcd";
+    char str2[] = "abcd";
+    const char str3[] = "abcd";
+    const char str4[] = "abcd";
+    const char *str5 = "abcd";
+    const char *str6 = "abcd";
+    char *str7 = "abcd";
+    char *str8 = "abcd";
+
+    cout << ( str1 == str2 ) << endl;
+    cout << ( str3 == str4 ) << endl;
+    cout << ( str1 == str3 ) << endl;
+    cout << ( str5 == str6 ) << endl;
+    cout << ( str7 == str8 ) << endl;
+    cout << ( str5 == str7 ) << endl;
+
+    /* 
+OUTPUT:
+     suse12:~/lxf/test/destructor # ./string_literal 
+     0
+     0
+     0
+     1
+     1
+     1
+     * */
+    return 0;
+}

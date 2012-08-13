@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+HEADER_SIZE	my.h	/^const unsigned int HEADER_SIZE = sizeof(unsigned int) * 5;$/;"	v
+MAXLINE	my.h	/^const int MAXLINE = 4096;$/;"	v
+MsgHeader	my.h	/^struct MsgHeader$/;"	s
+SA	my.h	/^typedef struct sockaddr SA;$/;"	t	typeref:struct:sockaddr
+SEND_SIZE	baseclient.cpp	/^int SEND_SIZE = 50;$/;"	v
+SEND_SIZE	client.cpp	/^const int SEND_SIZE = 50;$/;"	v
+cmd	my.h	/^    unsigned int cmd;\/\/ 消息类型$/;"	m	struct:MsgHeader
+dg_cli	baseclient.cpp	/^dg_cli(int sockfd, const SA* pservaddr, socklen_t servlen)$/;"	f
+dg_cli	client.cpp	/^dg_cli(int sockfd, const SA* pservaddr, socklen_t servlen)$/;"	f
+dg_echo	server.cpp	/^void dg_echo(int sockfd, SA* pcliaddr, socklen_t clilen)$/;"	f
+length	my.h	/^    unsigned int length; \/\/数据消息长度$/;"	m	struct:MsgHeader
+main	baseclient.cpp	/^main(int argc, char** argv)$/;"	f
+main	client.cpp	/^main(int argc, char** argv)$/;"	f
+main	server.cpp	/^main(int argc, char** argv)$/;"	f
+para1	my.h	/^    unsigned int para1;$/;"	m	struct:MsgHeader
+para2	my.h	/^    unsigned int para2;$/;"	m	struct:MsgHeader
+para3	my.h	/^    unsigned int para3;$/;"	m	struct:MsgHeader

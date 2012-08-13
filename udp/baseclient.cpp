@@ -53,6 +53,14 @@ main(int argc, char** argv)
 {
     int         sockfd;
     struct sockaddr_in servaddr;
+	struct student
+	{
+		int age;
+		int sex;
+		char* name;
+	};
+
+	struct student stu;
 
     if (argc != 3)
     {

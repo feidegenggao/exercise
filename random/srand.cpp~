@@ -1,0 +1,36 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  srand.cpp
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  04/14/12 15:04:23
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  YOUR NAME (), 
+ *        Company:  
+ *
+ * =====================================================================================
+ */
+#include <stdio.h> 
+#include <iostream> 
+#include <time.h> 
+using namespace std; 
+
+int main(int argc, char* argv[]) 
+{
+    if (argc != 2)
+    {
+        cerr<<"USAGE:./random max"<<endl;
+        return -1;
+    }
+    int max = atoi(argv[1]);
+    srand( (unsigned)time( NULL ) );
+    for (int i=0;i<100;i++) 
+        cout<<(rand()%max)<<"\n";
+    cout<<endl;
+    return 0;
+}
