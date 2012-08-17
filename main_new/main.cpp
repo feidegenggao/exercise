@@ -16,12 +16,28 @@
  * =====================================================================================
  */
 #include   "../my.h"
+#include    <stdio.h>
 
 //can new class here?
 //cout<<"cout comment before main() function"<<endl;
-    int
+int aaa = printf("Hello world1");
+class A{
+    public:
+        A() { cout<<"A->A()"<<endl;}
+        ~A() { cout<<"A->~A()"<<endl;}
+
+    private:
+        int test;
+        float teststt;
+};
+
+A *a = new A();
+
+int
 main()
 {
-    cout<<"Hello world!"<<endl;
+
+    A *b = new A();
+    cout<<"sizeof(a)"<<sizeof(*a)<<"sizeof(b)"<<sizeof(*b)<<endl;
     return 0;
 }
