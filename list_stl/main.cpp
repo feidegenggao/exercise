@@ -17,12 +17,44 @@
  */
 #include    <iostream>
 #include    <list>
+#include    <algorithm>
 
 using namespace std;
 void printit(int& int_arg)
 {
     cout<<"ele:"<<int_arg<<endl;
 }
+
+class syncbuffer{
+    public:
+        syncbuffer(){}
+        ~syncbuffer(){}
+        int insert_element(int temp)
+        {
+            list<int>::iterator it;
+            for(it = element_list.begin(); it != element_list.end(); it++)
+            {
+                if ((*it) > temp)
+                {
+                    element_list.insert(it, temp);
+                    break;
+                }
+            }
+            if (element_list.end() == it)
+                element_list.push_back(temp);
+        }
+
+        void print_ele()
+        {
+            list<int>::iterator it;
+            for(it = element_list.begin(); it != element_list.end(); it++)
+            {
+                cout<<"buffer_ele:"<<(*it)<<endl;
+            }
+        }
+
+        list<int> element_list;
+};
 
 int main(void)
 {
@@ -40,7 +72,7 @@ int main(void)
 
     else
     {
-        for_each(list_test.begin(), list_test.end(), printit);
+        std::for_each(list_test.begin(), list_test.end(), printit);
     }
 
     list<int>::iterator list_itor;
@@ -50,5 +82,28 @@ int main(void)
         list_test.erase(list_itor++);
     }
 
+    list_test.clear();
+
+    list_test.push_back(1);
+    list_test.push_back(3);
+    list_test.push_back(4);
+
+    std::for_each(list_test.begin(), list_test.end(), printit);
+
+    std::cout<<"After Insert()"<<std::endl;
+    list_itor = list_test.end();
+    list_test.insert(list_itor, list_test.begin(), list_test.end());
+
+    list_test.insert(--list_itor, 5);
+    std::for_each(list_test.begin(), list_test.end(), printit);
+
+    //下面进行插入的操作，每次插入找到合适的位置，合适的位置是指按大小顺序排列元素位置。
+    syncbuffer buffer;
+    buffer.insert_element(4);
+    buffer.insert_element(5);
+    buffer.insert_element(1);
+    buffer.insert_element(2);
+    buffer.print_ele();
+    
     return 0;
 }

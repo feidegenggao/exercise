@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <info>
     <client>
-        <addr>192.168.13.81</addr>
-        <usr>root</usr>
-        <passwd>uestc8020</passwd>
-    </client>
-
-    <client>
-        <addr>192.168.9.64</addr>
+        <addr>192.168.13.90</addr>
         <usr>root</usr>
         <passwd>uestc8020</passwd>
     </client>
