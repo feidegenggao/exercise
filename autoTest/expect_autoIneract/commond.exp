@@ -1,0 +1,60 @@
+#!/usr/bin/expect -f
+set ip [lindex $argv 0 ]
+set user root
+set passwd uestc8020
+set timeout 10
+spawn ssh $user@$ip
+expect "Password:" { send "$passwd\r"}
+
+expect "#"
+send "cd /root/lxf/p2pclient/\r"
+
+expect "#"
+send "pwd\r"
+
+send "git pull\r"
+expect "Password:" { send "$passwd\r"}
+
+expect "#"
+send "cd ./p2plive/build/\r"
+
+#expect "#"
+#send "make clean\r"
+expect "#"
+#1>/etc/null是把标准输出重定向到空设备
+#2>/etc/null是把标准错误重定向到空设备
+send "make 1>/dev/null\r"
+expect "#"
+send "echo \"make done\" \r"
+
+#启动p2plive
+expect "#"
+#send "\03\r"是发送Ctrl+C这种组合键，我只想说，expect真的很好用。
+#具体解释：http://expect.sourceforge.net/FAQ.html#q54
+#expect也可以发所能发功能键。
+#send "\03\r"
+#找到指定的screen
+#send "screen -r p2plive\r"
+#expect "#"
+#根据进程名字，杀死旧有的p2plive后台进程
+#send "pkill -x p2plive\r"
+#expect "#"
+#启动后台进程
+#send "./src/p2plive&\r"
+#expect "#"
+#send "\01d\r"
+
+#启动client
+expect "#"
+send "screen -r client\r"
+expect "#"
+send "pkill -x client\r"
+expect "#"
+send "./client&\r"
+expect "#"
+send "\01d\r"
+
+#interact
+expect "#"
+send "exit\r"
+expect eof
