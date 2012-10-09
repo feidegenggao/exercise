@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+element_list	main.cpp	/^        list<int> element_list;$/;"	m	class:syncbuffer	file:
+insert_element	main.cpp	/^        int insert_element(int temp)$/;"	f	class:syncbuffer
+main	main.cpp	/^int main(void)$/;"	f
+print_ele	main.cpp	/^        void print_ele()$/;"	f	class:syncbuffer
+printit	main.cpp	/^void printit(int& int_arg)$/;"	f
+syncbuffer	main.cpp	/^        syncbuffer(){}$/;"	f	class:syncbuffer
+syncbuffer	main.cpp	/^class syncbuffer{$/;"	c	file:
+~syncbuffer	main.cpp	/^        ~syncbuffer(){}$/;"	f	class:syncbuffer

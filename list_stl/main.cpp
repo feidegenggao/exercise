@@ -76,6 +76,16 @@ int main(void)
     }
 
     list<int>::iterator list_itor;
+    list_itor = list_test.begin();
+    //cout<<"list的迭代器："<<list_itor<<endl;
+    list_itor++;
+    list_test.erase(list_test.begin());
+    if (list_test.begin() == list_itor)
+        cout<<"删除过后，list的begin和list_itor是一样的了"<<endl;
+    list_itor++;
+    cout<<"itor:"<<*list_itor<<endl;
+    cout<<"list.back():"<<list_test.back()<<endl;
+
     for (list_itor = list_test.begin(); list_itor != list_test.end();)
     {
         cout<<"itor:"<<*list_itor<<endl;
