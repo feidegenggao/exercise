@@ -18,6 +18,7 @@
 #include    <iostream>
 #include    <list>
 #include    <algorithm>
+#include <sys/time.h>
 
 using namespace std;
 void printit(int& int_arg)
@@ -59,6 +60,43 @@ class syncbuffer{
 int main(void)
 {
     list<int> list_test;
+
+    for (int i = 0; i < 6005; i++)
+    {
+        if (i != 4000)
+            list_test.push_back(i);
+    }
+
+    int listsize = list_test.size();                                             
+    int i;
+    struct timeval timenow1;
+    struct timeval timenow2;
+    gettimeofday(&timenow1, NULL);
+
+    //list_test.push_back(10000);
+    //i = 50;
+
+
+    list<int>::iterator  it = list_test.end(); 
+    it--;                                                                      
+    for (int i = 0; i < listsize; it--, i++)                                   
+    {                                                                          
+        if ((*it) < 4000)
+        {
+            list_test.insert(++it, 4000);
+            break;
+        }
+    }
+
+    gettimeofday(&timenow2, NULL);
+    cout<<"ms1:"<<timenow1.tv_usec<<endl;
+    cout<<"ms2:"<<timenow2.tv_usec<<endl;
+    return 0;
+
+
+
+
+
 
     list_test.push_back(1);
     list_test.push_back(2);
@@ -114,6 +152,6 @@ int main(void)
     buffer.insert_element(1);
     buffer.insert_element(2);
     buffer.print_ele();
-    
+
     return 0;
 }
