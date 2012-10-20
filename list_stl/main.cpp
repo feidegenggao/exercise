@@ -61,18 +61,18 @@ int main(void)
 {
     list<int> list_test;
 
-    for (int i = 0; i < 6005; i++)
+    for (int i = 0; i < 5; i++)
     {
         if (i != 4000)
             list_test.push_back(i);
     }
 
-    int listsize = list_test.size();                                             
     int i;
     struct timeval timenow1;
     struct timeval timenow2;
     gettimeofday(&timenow1, NULL);
 
+    int listsize = list_test.size();                                             
     //list_test.push_back(10000);
     //i = 50;
 
