@@ -26,5 +26,8 @@ int main()
 
     cout<<"c:"<<c<<endl;
 
+    string d (2);
+    cout<<"d:"<<d<<endl;
+
     return 0;
 }

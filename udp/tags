@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_VERSION	5.7	//
 HEADER_SIZE	my.h	/^const unsigned int HEADER_SIZE = sizeof(unsigned int) * 5;$/;"	v
 MAXLINE	my.h	/^const int MAXLINE = 4096;$/;"	v
 MsgHeader	my.h	/^struct MsgHeader$/;"	s
