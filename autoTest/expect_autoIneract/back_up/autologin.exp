@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+set ip [lindex $argv 0 ]
+set user root
+set passwd uestc8020
+set timeout 10
+spawn ssh $user@$ip
+expect "Password:" { send "$passwd\r"}
+expect "#"
+send "cd /root/lxf/p2pclient/\r"
+expect "#"
+send "pwd\r"
+send "exit\r"
+#send "git pull\r"
+#expect "Password:" { send "$passwd\r"}
+expect eof

@@ -1,0 +1,22 @@
+#!/usr/bin/expect -f
+set ip [lindex $argv 0 ]
+set user root
+set passwd uestc8020
+set timeout 10
+spawn ssh $user@$ip
+expect "Password:" { send "$passwd\r"}
+
+#启动client
+expect "#"
+send "screen -r client\r"
+expect "#"
+send "pkill -x client\r"
+expect "#"
+send "./client&\r"
+expect "#"
+send "\01d\r"
+
+#interact
+expect "#"
+send "exit\r"
+expect eof
