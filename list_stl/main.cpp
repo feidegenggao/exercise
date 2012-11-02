@@ -18,6 +18,7 @@
 #include    <iostream>
 #include    <list>
 #include    <algorithm>
+#include <sys/time.h>
 
 using namespace std;
 void printit(int& int_arg)
@@ -107,6 +108,43 @@ int main(void)
     list<MsgHeader*> headerlist;
 
 
+    for (int i = 0; i < 5; i++)
+    {
+        if (i != 4000)
+            list_test.push_back(i);
+    }
+
+    int i;
+    struct timeval timenow1;
+    struct timeval timenow2;
+    gettimeofday(&timenow1, NULL);
+
+    int listsize = list_test.size();                                             
+    //list_test.push_back(10000);
+    //i = 50;
+
+
+    list<int>::iterator  it = list_test.end(); 
+    it--;                                                                      
+    for (int i = 0; i < listsize; it--, i++)                                   
+    {                                                                          
+        if ((*it) < 4000)
+        {
+            list_test.insert(++it, 4000);
+            break;
+        }
+    }
+
+    gettimeofday(&timenow2, NULL);
+    cout<<"ms1:"<<timenow1.tv_usec<<endl;
+    cout<<"ms2:"<<timenow2.tv_usec<<endl;
+    return 0;
+
+
+
+
+
+
     list_test.push_back(1);
     list_test.push_back(2);
     list_test.push_front(3);
@@ -121,6 +159,17 @@ int main(void)
     {
         std::for_each(list_test.begin(), list_test.end(), printit);
     }
+
+    list<int>::iterator list_itor;
+    list_itor = list_test.begin();
+    //cout<<"list的迭代器："<<list_itor<<endl;
+    list_itor++;
+    list_test.erase(list_test.begin());
+    if (list_test.begin() == list_itor)
+        cout<<"删除过后，list的begin和list_itor是一样的了"<<endl;
+    list_itor++;
+    cout<<"itor:"<<*list_itor<<endl;
+    cout<<"list.back():"<<list_test.back()<<endl;
 
     for (list_itor = list_test.begin(); list_itor != list_test.end();)
     {

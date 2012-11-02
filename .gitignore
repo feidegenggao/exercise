@@ -1,0 +1,52 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+#
+# # Compiled Dynamic libraries
+*.so
+#
+# # Compiled Static libraries
+*.lai
+*.la
+*.a
+# Executables
+*.exe
+*.out
+
+#DIY config
+.clang_complete
+app
+gen_makefile.py
+
+
+
+# http://www.gnu.org/software/autoconf
+autom4te.cache/
+compile
+*.log
+*.m4
+config.status
+stamp-h1
+.dep/
+config.h
+configure.scan
+
+
+.*.sw[a-z]
+*.un~
+Session.vim
+
+
+!.gitignore
+*~
+
+# Ignore tags created by etags and ctags
+TAGS
+!TAGS/
+tags
+!tags/
+t cscope*
+
+#Ignore temp files
+*~
