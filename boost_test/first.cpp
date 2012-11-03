@@ -1,22 +1,14 @@
+
 /*
- * ============================================================================
- *
  *       Filename:  first.cpp
- *
- *    Description:  test boost 
- *
- *        Version:  1.0
- *        Created:  10/22/12 16:26:08
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  lxf (), 
- *        Company:  NDSL
- *
- * ============================================================================
+ *    Description:  
+ *         Author:  jumbal
+ *          Email:  the.jumbal@gmail.com
+ *        Created:  10/22/2012 04:36:50 PM
  */
-#include    <iostream>
-#include    <boost/any.hpp>
+
+#include<iostream>
+#include<boost/any.hpp>
 
 int main()
 {
