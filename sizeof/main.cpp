@@ -16,6 +16,7 @@
  * =====================================================================================
  */
 #include    <iostream>
+#include <stdint.h>
 
 using namespace std;
 
@@ -34,11 +35,15 @@ int main(int argc, char** argv)
     int array2[10];
     int *int_pointer;
     int a;
+    unsigned int b;
+    int16_t sixteen_bit_integer;
 
     cout<<"sizeof(array1 = new int[10]):"<<sizeof(array1)<<endl;
     cout<<"sizeof(array2 (int array2[10])"<<sizeof(array2)<<endl;
     cout<<"sizeof(int_pointer(int *int_pointer)"<<sizeof(int_pointer)<<endl;
     cout<<"sizeof(a (int a))"<<sizeof(a)<<endl;
+    cout<<"sizeof(unsigned int):"<<sizeof(unsigned int)<<endl;
+    cout<<"sizeof(16_int):"<<sizeof(sixteen_bit_integer)<<endl;
 
     fun(array1, array2);
 
