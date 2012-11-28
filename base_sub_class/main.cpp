@@ -24,6 +24,7 @@ class Base{
         virtual ~Base() { std::cout<<"~Base()"<<std::endl; this->recyler();}
 
         virtual void recyler() { std::cout<<"~Base() recyler()"<<std::endl;}
+        virtual int fun() { std::cout<<"Base::fun()"<<std::endl;}
     private:
         int b;
 };
@@ -34,6 +35,7 @@ class Sub : public Base{
         virtual ~Sub() { std::cout<<"~Sub()" <<std::endl; recyler();}
 
         virtual void recyler() { std::cout<<"~Sub() recyler()"<<std::endl;}
+        int fun(){ Base::fun(); std::cout<<"Sub::fun()"<<std::endl;}
     private:
         int s;
 };
@@ -41,6 +43,7 @@ class Sub : public Base{
 int main(void)
 {
     Sub* p_sub = new Sub();
+    p_sub->fun();
     //p_sub->recyler();
     delete p_sub;
     /*
