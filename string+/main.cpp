@@ -26,8 +26,19 @@ int main()
 
     cout<<"c:"<<c<<endl;
 
-    string d (2);
-    cout<<"d:"<<d<<endl;
+    //This is wrong , reason:invalid conversion from ‘int’ to ‘const char*’
+    //string d (2);
+    //cout<<"d:"<<d<<endl;
 
+
+    //Is Ok ?
+    //no, reason:  expected primary-expression before ‘e’
+    // expected ‘;’ before ‘e’
+    //c = string e("Hello lyh");
+    //Oh, int z; z = int c = 2; This is the same
+    int z = 0, y;
+    z = y = 2;
+    cout<<"z:"<<z<<"\ty:"<<y<<endl;
+    //cout<<"c:"<<c<<endl;
     return 0;
 }

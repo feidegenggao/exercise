@@ -27,8 +27,32 @@ using namespace std;
 int
 main(int argc, char** argv)
 {
+    if (argc != 2)
+    {
+        cout<<"USEAGE:"<<argv[0]<<"ZhiXingKeZhiXingWenJianCiShu"<<endl;
+        exit(0);
+    }
     pid_t pid;
 
+    int n =atoi(argv[1]);
+    for (int i = 0; i < n; i++)
+    {
+        if ( (pid = fork()) < 0)
+            cerr<<"fork error:"<<strerror(errno)<<endl;
+        else if (pid == 0)
+        {
+            cout<<"in child process, i:"<<i<<"\tpid:"<<getpid()<<endl;
+            if (execlp("/root/lxf/exercise/exec/hello",
+                        "/root/lxf/exercise/exec/hello", (char*) 0) < 0)
+            {
+                cerr<<"execlp error:"<<strerror(errno)<<endl;
+            }
+            sleep(1);
+            exit(0);
+        }
+        sleep(2);
+    }
+    /* 
     if ( (pid = fork()) < 0)
             cerr<<"fork error:"<<strerror(errno)<<endl;
     else if (pid == 0)
@@ -54,5 +78,6 @@ main(int argc, char** argv)
 
     if (waitpid(pid, NULL, 0) != pid)
             cerr<<"waitpid error:"<<strerror(errno)<<endl;
+    */
     exit(0);
 }
