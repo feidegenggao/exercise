@@ -43,5 +43,21 @@ int main(void)
     tempend.insert(tempend.end(), tempa.begin(), tempa.end());
 
     printit(tempend);
+
+
+    for (list<int>::iterator it = tempend.begin(); it != tempend.end();)
+    {
+        if ((*it) == 1 or (*it) == 11)
+        {
+            tempend.erase(it++);
+        }
+        else
+        {
+            ++it;
+        }
+    }
+
+    printit(tempend);
+
    return 0;
 }
