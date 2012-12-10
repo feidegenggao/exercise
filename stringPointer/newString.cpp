@@ -22,8 +22,7 @@ using namespace std;
 string& fun()
 {
     string* temp = new string("Hello World");
-    string a = *temp;
-    return a;
+    return (*temp);
 }
 
 int main()
