@@ -21,9 +21,9 @@
 
 char logbuf[LOG_BUFFER_SIZE];
 
-int vspf(char* fmt, ...)
+int vspf(char* fmt, va_list argptr) 
 {
-    va_list argptr;
+    //va_list argptr;
     int cnt;
     va_start(argptr, fmt);
     cnt = vsnprintf(logbuf, LOG_BUFFER_SIZE, fmt, argptr);
