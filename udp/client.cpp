@@ -26,14 +26,18 @@ dg_cli(int sockfd, const SA* pservaddr, socklen_t servlen)
     char sendline[MAXLINE], recvline[MAXLINE + 1];
     memcpy(sendline, "Hello Kitty!", 50);
     bzero(recvline, sizeof(recvline));
+    int i = 0;
 
     while(1)
     {
-        sendto(sockfd, sendline, SEND_SIZE, 0, pservaddr, servlen);
+        n = sendto(sockfd, sendline, SEND_SIZE, 0, pservaddr, servlen);
+        cout<<"send sum:"<<i++<<endl;
+        /*
         n = recvfrom(sockfd, recvline, MAXLINE, 0, NULL, NULL);
         recvline[n] = 0; 
         cout<<"RECV:"<<recvline<<endl;
         bzero(recvline, sizeof(recvline));
+        */
     } 
 }
 

@@ -23,10 +23,13 @@ void dg_echo(int sockfd, SA* pcliaddr, socklen_t clilen)
     socklen_t   len;
     char        mesg[MAXLINE];
 
+    int i = 0;
     for ( ; ; )
     {
         len = clilen;
         n = recvfrom(sockfd, mesg, MAXLINE, 0, pcliaddr, &len);
+        cout<<"recv sum"<<i++<<endl;
+        sleep(5);
 
         sendto(sockfd, mesg, n, 0, pcliaddr, len);
     }
