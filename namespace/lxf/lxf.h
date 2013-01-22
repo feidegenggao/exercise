@@ -19,16 +19,18 @@
 #define     _LXF_LXF_HEADER_
 #include    <iostream>
 namespace lxf{
-    class widget{
-        public:
-            widget(){
+    namespace base{
+        class widget{
+            public:
+                widget(){
 
-            }
-            ~widget(){
+                }
+                ~widget(){
 
-            }
+                }
 
-            void printInfo(void) const;
+                void printInfo(void) const;
+        };
     };
 };
 #endif

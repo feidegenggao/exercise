@@ -15,7 +15,9 @@
  *
  * =====================================================================================
  */
-#include    "../my.h"
+#include    <iostream>
+#include    <map>
+using namespace std;
 
 typedef multimap<int, string, int>::value_type  valType_complex;
 typedef multimap<int, string>::value_type  valType;
@@ -26,4 +28,5 @@ int main(void)
 
     file_location.insert(valType(1, string("1")));
     file_location_complex.insert(valType_complex(1, string("2"), 1));
+    
 }

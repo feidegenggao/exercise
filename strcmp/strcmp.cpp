@@ -1,12 +1,12 @@
 /*
  * ============================================================================
  *
- *       Filename:  lxf.cpp
+ *       Filename:  strcmp.cpp
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  11/20/2012 11:56:20 AM
+ *        Created:  01/16/13 21:57:47
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -15,9 +15,13 @@
  *
  * ============================================================================
  */
-#include    "lxf.h"
-using namespace lxf::base;
-void widget::printInfo() const
+#include    <iostream>
+#include    <string.h>
+
+using namespace std;
+
+int main(void)
 {
-    std::cout<<"lxf::widget::printInfo()"<<std::endl;
+    int rt = strcmp("Hello", "Hello");
+    cout<<"rt:"<<rt<<endl;
 }

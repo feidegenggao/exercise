@@ -5,8 +5,8 @@ using std::cerr;
 using std::endl;
 int main()
 {
-	cout<<"Hello__1"<<endl;
-	cerr<<"Kitty__1"<<endl;
+	cout<<"cout Hello cout"<<endl;
+	cerr<<"cerr Hello cerr"<<endl;
 
 	return 0;
 }
