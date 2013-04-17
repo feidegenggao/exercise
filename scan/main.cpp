@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 {
     if (2 != argc)
     {
-        cerr<<"USAG:./server"<<endl;
+        cerr<<"USAG:"<<argv[0]<<" scan_addr"<<endl;
         return -1;
     }
     pthread_t pid;
@@ -44,7 +44,7 @@ int main(int argc, char** argv)
         inet_pton(AF_INET, argv[1], &serveraddr.sin_addr);
         if (0 == connect(sockFd, (SA *) &serveraddr, sizeof(serveraddr)))
         {
-            printf("port:%d is opening...\n", serverport);
+            printf("port:%d \tis opening...\n", serverport);
         }
         else
         {
